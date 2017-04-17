@@ -1,0 +1,8 @@
+.file {
+  visibility: hidden;
+  position: absolute;
+}
+
+#plot {
+    height: calc(100vh - 145px);
+}

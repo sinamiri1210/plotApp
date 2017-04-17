@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Plot App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href="../stylesheets/style.css">
+  </head>
+  <body>
+    <div class="jumbotron text-center">
+      <h1>Data Visualization Application</h2>
+      <h2>Input the data or choose the file to visualize</h2>
+    </div>
+    <div class="container">
+      <form action="api/data" method="POST">
+        <div class="form-group">
+          <label for="comment">Data:</label>
+          <textarea class="form-control" rows="10" name="data"></textarea>
+        </div>
+        <div class="form-group">
+          <input type="file" class="file" name="dataFile">
+          <div class="input-group col-xs-12">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+            <input type="text" class="form-control input-lg" disabled placeholder="Upload Data Sheet">
+            <span class="input-group-btn">
+              <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+            </span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    <script src='/javascripts/bundle.js'></script>
+  </body>
+  </html>
