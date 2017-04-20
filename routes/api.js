@@ -7,6 +7,7 @@
 
   router.post('/data' , function (req, res, next){
     var filePath = 'models\\' + req.body.dataFile;
+    var graphType = req.body.selection;
 
     function checkData (callback) {
       fs.readFile(filePath, 'utf8', function (err, data) {
@@ -20,7 +21,16 @@
     };
 
     checkData(function (data) {
-        res.render('data', {Data: data});
+      switch(graphType) {
+          case 'Stress-Strain-Time':
+              res.render('data', {Data: data});
+              break;
+          case 'Other':
+              res.send('Other graphs not defined yet!')
+              break;
+          default:
+              res.render('data', {Data: data});
+      };
     });
   });
 

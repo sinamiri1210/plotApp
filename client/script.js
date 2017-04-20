@@ -10,12 +10,8 @@ jQuery(document).ready(function($){
   $(document).on('change', '.file', function(){
     $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, 'models\\'));
   });
-
 });
 
-
-//plot placeholder
-var PLOT = document.getElementById('plot');
 //raw data to be plotted
 function readData(callback) {
   var rawData = document.getElementById('data').innerHTML;
@@ -25,34 +21,92 @@ function readData(callback) {
 
 readData(function (rows) {
 
-    var trace = {
-      type: 'scatter',                    // set the chart type
-      mode: 'lines',                      // connect points with lines
-      x: rows.map(function(row){          // set the x-data
-        return row['Strain'];
+    var trace1 = {
+      type: 'scatter',
+      mode: 'lines',
+      x: rows.map(function(row){
+        return row['Time'];
       }),
-      y: rows.map(function(row){          // set the y-data
+      y: rows.map(function(row){
         return row['Stress'];
       }),
-      line: {                             // set the width of the line.
-        width: 1
+      line: {
+        width: 2
       },
     };
 
-    var layout = {
+    var trace2 = {
+      type: 'scatter',
+      mode: 'lines',
+      x: rows.map(function(row){
+        return row['Time'];
+      }),
+      y: rows.map(function(row){
+        return row['Strain'];
+      }),
+      line: {
+        width: 2
+      },
+    };
+
+    var trace3 = {
+      type: 'scatter',
+      mode: 'lines',
+      x: rows.map(function(row){
+        return row['Strain'];
+      }),
+      y: rows.map(function(row){
+        return row['Stress'];
+      }),
+      line: {
+        width: 2
+      },
+    };
+
+    var layout1 = {
       yaxis: {
-        title: "Stress",
+        title: "Stress [MPa]",
+        showline: true
+      },
+      xaxis: {
+        title: "Time [h]",
+        showline: true
+      },
+      margin: {
+        l: 40, b: 60, r: 30, t: 20
+      }
+    };
+
+    var layout2 = {
+      yaxis: {
+        title: "Strain",
+        showline: true
+      },
+      xaxis: {
+        title: "Time [h]",
+        showline: true
+      },
+      margin: {
+        l: 40, b: 60, r: 30, t: 20
+      }
+    };
+
+    var layout3 = {
+      yaxis: {
+        title: "Stress [MPa]",
         showline: true
       },
       xaxis: {
         title: "Strain",
         showline: true
       },
-      margin: {                           // update the left, bottom, right, top margin
+      margin: {
         l: 40, b: 60, r: 30, t: 20
       }
     };
 
-    Plotly.plot(PLOT, [trace], layout, {showLink: false});
+    Plotly.plot(document.getElementById('stressT'), [trace1], layout1, {showLink: false});
+    Plotly.plot(document.getElementById('strainT'), [trace2], layout2, {showLink: false});
+    Plotly.plot(document.getElementById('stressStrain'), [trace3], layout3, {showLink: false});
 
 });

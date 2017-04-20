@@ -3,6 +3,6 @@
   position: absolute;
 }
 
-#plot {
-    height: calc(100vh - 145px);
+#stressT, #strainT, #stressStrain {
+    height: calc(50vh - 145px);
 }
