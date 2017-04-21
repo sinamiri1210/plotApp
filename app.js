@@ -19,7 +19,10 @@ const app = express();
 app.engine('hbs', exphbs({extname: '.hbs'}));
 app.set('view engine', 'hbs');
 
-app.get('/javascripts/bundle.js', browserify('./client/script.js'));
+app.get('/javascripts/indexScript.js', browserify('./client/indexScript.js'));
+app.get('/javascripts/sstScript.js', browserify('./client/sstScript.js'));
+app.get('/javascripts/scatterScript.js', browserify('./client/scatterScript.js'));
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

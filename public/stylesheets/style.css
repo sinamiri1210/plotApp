@@ -6,3 +6,7 @@
 #stressT, #strainT, #stressStrain {
     height: calc(50vh - 145px);
 }
+
+#scatter {
+    height: calc(80vh - 145px);
+}

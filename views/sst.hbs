@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Stress Strain Time Diagrams</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel='stylesheet' href="../stylesheets/style.css">
+  </head>
+  <body>
+    <div class="container">
+    <h2>Data content and visualization</h2><br>
+      <div class="panel panel-default">
+        <div class="panel-heading">Data</div>
+        <div id="data" class="panel-body">{{content}}</div>
+      </div><br>
+      <div class="panel panel-default">
+        <div class="panel-heading">Stress-Time</div>
+        <div id="stressT" class="panel-body"></div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Strain-Time</div>
+        <div id="strainT" class="panel-body"></div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Stress-Strain</div>
+        <div id="stressStrain" class="panel-body"></div>
+      </div>
+      <ul class="pager">
+        <li><a href="/">Back</a></li>
+      </ul>
+    </div>
+    <script src='/javascripts/sstScript.js'></script>
+  </body>
+  </html>

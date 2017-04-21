@@ -2,7 +2,7 @@
   <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Plot App</title>
+    <title>Scatter Diagrams</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,24 +17,15 @@
     <h2>Data content and visualization</h2><br>
       <div class="panel panel-default">
         <div class="panel-heading">Data</div>
-        <div id="data" class="panel-body">{{Data}}</div>
+        <div id="data" class="panel-body">{{content}}</div>
       </div><br>
       <div class="panel panel-default">
-        <div class="panel-heading">Stress-Time</div>
-        <div id="stressT" class="panel-body"></div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">Strain-Time</div>
-        <div id="strainT" class="panel-body"></div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">Stress-Strain</div>
-        <div id="stressStrain" class="panel-body"></div>
-      </div>
+        <div class="panel-heading">Scatter</div>
+        <div id="scatter" class="panel-body"></div>
       <ul class="pager">
         <li><a href="/">Back</a></li>
       </ul>
     </div>
-    <script src='/javascripts/bundle.js'></script>
+    <script src='/javascripts/scatterScript.js'></script>
   </body>
   </html>
